@@ -23,7 +23,7 @@ class Auto{
 
     public:
         static Auto* Instance( string tipo ) {
-            if(instance == nullptr)
+            if(instance == 0)
                 if(tipo == "Berlina"){
                     instance = new Auto();
                     instance -> setCosto(30000.0);
@@ -68,8 +68,6 @@ class Auto{
             cout << "############################" << endl ;
         }   
 };
-
-Auto* instance = nullptr;
 
 class Optional{
     private:
@@ -120,6 +118,8 @@ void funzionalitaAggiuntive(T* o){
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@
 *         M A I N
 *@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+Auto* Auto::instance = 0;
 
 int main(){
     char command;
